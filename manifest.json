@@ -1,0 +1,31 @@
+{
+"manifest_version": 2,
+"name": "genteel",
+"description": "You will need courtesy with people.",
+"version": "1.2.1",
+"author": "koverchik",
+"icons": {
+		 "16": "icon-16.png",
+		 "48": "icon-48.png",
+		 "128": "icon-128.png"
+		 		  },
+"browser_action": {
+		"default_icon": "icon-48.png",
+		"default_title": "Вежливость"
+	},
+
+"permissions": [
+	     "background"
+	  ],
+
+"content_scripts": [
+	{
+		"matches": [ "https://www.kufar.by/account/messages/*" ],
+		"persistent": false,
+		"js": [ "content.js"],
+		"css": ["genteelStyles.css"],
+		"run_at": "document_end"
+	}
+]
+
+}

@@ -1,0 +1,49 @@
+.list-genteel li{
+padding: 8px 16px;
+color: #70818c;
+border: 1px solid #cad2d7;
+cursor: pointer;
+margin: 2px 0px;
+border-radius: 5px;
+max-width: 300px;
+background: #fff;}
+
+.list-genteel li:hover{
+background: #00ad64;
+color: white;
+}
+
+.list-genteel{
+  margin: 5px 0px;
+  width: 100%;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+
+#blockExtension{
+  font-size: 10pt;
+  color: #70818c;
+  position: absolute;
+  margin-top: 82px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+.list-genteel button{
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.list-genteel li:nth-child(n+4){
+  display: none;
+}
+
+.msg-input p{
+color: red;
+position: absolute;
+font-size: 8pt;
+top: 2px;
+}
