@@ -4,7 +4,6 @@ function stateDoc() {
     const salutation = ["Здравствуйте!", "Доброе утро!", "Добрый день!", "Добрый вечер!", "Добро пожаловать!", "Привет!", "Приветствую Вас!", "Приветствую Вас от имени " ];
     const apologies = ["Приносим извинения за длительное ожидание обратной связи.", "Извините за долгое ожидание ответа.", "Прошу прощения за долгое ожидание ответа.", "Приношу искренние извинения за задержку с ответом.", "Прошу прощения за длительное ожидание ответа."];
     const elaboration = ["Пожалуйста, опишите вопрос подробно.", "Напишите, пожалуйста, более подробно, какой конкретно вопрос вас интересует, а дальше я уже пойму, как и чем смогу вам помочь. ", "Если остались ещё какие-либо вопросы или возникнут новые — обязательно обращайтесь к нам за помощью!"];
-    const completion = ["Спасибо!", "Я вам очень признателен!","Позвольте выразить вам благодарность.", "И вам тоже спасибо!","He за что!","Не стоит благодарности!", "Хорошего дня!", "Хорошего дня и прекрасной недели!", "Отличного настроения и продуктивного дня!", "Желаем вам удачи.", "Всего наилучшего."];
 
 
     const idElem = document.getElementById('header');
@@ -18,16 +17,18 @@ function stateDoc() {
         let li = document.createElement('li');
         li.innerHTML = item;
         li.addEventListener("click", () => {
-          let textareaMSG = document.getElementById('messaging-widget-textarea');
-            textareaMSG.nextElementSibling.classList.remove("msg-input__button_disabled");
-            textareaMSG.nextElementSibling.removeAttribute("disabled");
+          let textareaMSG = document.getElementsByClassName('msg-input__button');
+            textareaMSG[0].nextElementSibling.classList.remove("msg-input__button_disabled");
+            textareaMSG[0].nextElementSibling.removeAttribute("disabled");
             let p = document.createElement('p');
             p.setAttribute('id', 'plaseholder');
+            p.style.marginTop = "50px";
             p.innerHTML = "Введите любой сивол для подтверждения ввода";
-            textareaMSG.value += item;
-            textareaMSG.focus();
-            textareaMSG.before(p);
-            textareaMSG.addEventListener('keydown', (event) => {
+            let textarea = document.getElementById('messaging-widget-textarea');
+            textarea.value += item;
+            textarea.focus();
+            textarea.before(p);
+            textarea.addEventListener('keydown', (event) => {
               let plaseholder = document.getElementById('plaseholder');
               if (plaseholder !== null){plaseholder.remove();}
               });
